@@ -1,0 +1,127 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.section-search {
+  margin-top: 4%;
+  position: relative;
+  border: 1.2px solid $color-primary-light;
+  input[type='text'] {
+    width: 80%;
+    font-size: 130%;
+    background: $color-white;
+    padding: 2%;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  i {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-secondary-light;
+
+    &#search-icon {
+      right: 4%;
+    }
+
+    &#filter-icon {
+      right: 10%;
+    }
+
+    &.activate-filter {
+      color: $color-primary-light;
+
+      &:hover {
+        color: $color-primary-dark;
+      }
+    }
+
+    &.clear-search-button {
+      color: $color-primary-light;
+      right: 16%;
+
+      &:hover {
+        color: $color-primary-dark;
+      }
+    }
+    &:hover {
+      color: $color-secondary-dark;
+      cursor: pointer;
+    }
+  }
+}
+
+.section-filter {
+  width: 100%;
+  height: 0rem;
+  // display: none;
+  opacity: 0;
+  visibility: hidden; //using this because display:none remove the elements from
+  // the DOM itself, so filters were not applied till the users click the filter
+  // icons and the elements were loaded to the DOM.
+  position: relative;
+
+  &--active {
+    height: auto;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    align-items: center;
+    margin-top: 0.7rem;
+  }
+
+  &__source-loading-mes {
+    font-size: $size-normal;
+    color: $color-black;
+    padding-top: 6px;
+  }
+
+  &__filter-wrapper {
+    display: flex;
+    justify-content: center;
+
+    &--choose-usecase {
+      width: 10.625rem;
+      margin-right: 1rem;
+    }
+
+    &--choose-license {
+      width: 6.875rem;
+      margin-right: 1rem;
+    }
+
+    &--choose-source {
+      width: 12.5rem;
+      display: none;
+    }
+  }
+
+  &__filter-button {
+    display: flex;
+    justify-content: center;
+
+    &--reset-filter-container {
+      display: inline-block;
+      margin: 0.7rem 1rem 0rem;
+    }
+
+    &--apply-filter-container {
+      display: inline-block;
+      margin: 0.7rem 1rem 0rem;
+    }
+  }
+}
+
+.load-more-button {
+  &-wrapper {
+    margin-bottom: 6rem; // vertical height is increasing
+    text-align: center;
+  }
+}
