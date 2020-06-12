@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // this defines what 1 rem is.
+  height: 31rem !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-white;
+  width: 40rem;
+  height: 31rem;
+}
