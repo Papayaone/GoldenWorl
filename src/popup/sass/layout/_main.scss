@@ -1,0 +1,143 @@
+.section-content {
+  .initial-info {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .primary__initial-info {
+    position: absolute;
+    top: 9rem;
+  }
+
+  .no-more-images-mes {
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  &__images-container {
+    min-width: 25rem;
+  }
+
+  &--bookmarks {
+    padding-bottom: 4rem;
+  }
+}
+
+.image-thumbnails {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.image {
+  position: relative;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 10px rgba($color-black, 0.15);
+  margin-bottom: 7px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    opacity: 0;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+
+    .extension-image-title {
+      opacity: 1;
+    }
+
+    .bookmark-select {
+      opacity: 1;
+    }
+
+    .image-license {
+      opacity: 1;
+    }
+  }
+
+  .extension-image-title {
+    backface-visibility: hidden;
+    position: absolute;
+    bottom: 1px;
+    color: $color-white;
+    font-size: $size-small;
+    font-weight: 700;
+    max-width: 100%;
+    opacity: 0;
+    z-index: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    padding: 0.25rem 0.5rem;
+    background: $color-black;
+
+    .foreign-landing-url {
+      text-decoration: none;
+      color: $color-white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .image-license {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: 90%;
+    opacity: 0;
+    z-index: 3;
+    height: 1.25rem;
+
+    a {
+      height: inherit;
+
+      img {
+        display: inline-block;
+        height: inherit;
+        width: auto;
+      }
+    }
+
+    .bookmark-icon {
+      padding: 0;
+      margin: 0;
+      float: right;
+      color: $color-white;
+      cursor: pointer;
+    }
+  }
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.grid-item {
+  float: left;
+  margin-bottom: 10px;
+  width: 32%;
+  /* max-height: 300px; */
+}
+
+.gutter-sizer {
+  width: 2%;
+}
